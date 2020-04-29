@@ -4,16 +4,13 @@
 
 from io import BytesIO
 import glob
-import logging
 import time
+
 import pandas as pd
 import pandas.api.types as ptypes
+from common import getLogger
 
-log = logging.getLogger(__name__)
-log.setLevel(logging.DEBUG)
-handler = logging.StreamHandler()
-handler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(message)s'))
-log.handlers = [handler]
+log = getLogger(__name__)
 
 def open_g1000_data(filename):
     '''Return a data frame for one flight'''

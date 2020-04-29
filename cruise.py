@@ -2,16 +2,10 @@
 
 '''Common code for cruise analysis'''
 
-import logging
 import matplotlib.pyplot as plt
-import numpy as np
-import pandas as pd
+from common import getLogger
 
-log = logging.getLogger(__name__)
-log.setLevel(logging.DEBUG)
-handler = logging.StreamHandler()
-handler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(message)s'))
-log.handlers = [handler]
+log = getLogger(__name__)
 
 def find_cruise_data(data):
     '''Return a data frame with all cruise data

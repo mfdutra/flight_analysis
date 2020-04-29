@@ -2,17 +2,12 @@
 
 '''Common code for takeoff analysis'''
 
-import logging
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import cruise
+from common import getLogger
 
-log = logging.getLogger(__name__)
-log.setLevel(logging.DEBUG)
-handler = logging.StreamHandler()
-handler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(message)s'))
-log.handlers = [handler]
+log = getLogger(__name__)
 
 def find_all_takeoffs(data, future=30):
     '''Return the number of detected takeoffs and
