@@ -6,6 +6,7 @@ import logging
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+import cruise
 
 log = logging.getLogger(__name__)
 log.setLevel(logging.DEBUG)
@@ -47,13 +48,5 @@ def to_analyze(data):
 
     data -- a column from a data frame'''
 
-    fig = plt.figure()
-    p1 = fig.add_subplot(2, 2, 1)
-    p2 = fig.add_subplot(2, 2, 2)
-
-    data.plot.line(ax=p1, title='Time series')
-    p1.get_xaxis().set_visible(False)
-
-    data.plot.kde(ax=p2, title='Distribution')
-
-    print(data.describe())
+    # Same as the cruise one right now. It may change.
+    cruise.analyze(data)
